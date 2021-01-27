@@ -1,0 +1,97 @@
+.plan-wrap{
+	padding-bottom: 30px;
+}
+
+.plan-content {
+	position: relative;
+  background-color: #fff;
+  padding: 0;
+  height: 90px;
+  width: 500px;
+  box-shadow: 0 2px 4px 0 rgba(121, 146, 185, 0.54);
+  margin: 30px auto 10px auto;
+  border-radius: 2px;
+}
+
+.plan-wrap .plan#none{
+	margin: 40px;
+	color: #1565c0;
+	text-align: center;
+}
+.plan-wrap .plan#none p{
+	line-height: 60px;
+	font-size: 25px;
+}
+.plan-wrap .plan#none div#2{
+	line-height: 40px;
+	font-size: 16px;
+}
+
+.plan-wrap .plan-date {
+  position: relative;
+  top: 7px;
+  left: 10px;
+  color: #1565c0;
+}
+.plan-wrap .plan-date .plan-weekday {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 1.3em;
+  color: #1565c0;
+}
+.plan-wrap .plan-date .plan-month {
+  position: absolute;
+  top: 28px;
+  left: 10px;
+  font-size: 1.15em;
+  color: #1565c0;
+}
+.plan-wrap .plan-date .plan-line {
+  position: absolute;
+  top: 48px;
+  left: 0px;
+  width: 55px;
+  height: 1.5px;
+  background-color: #1565c0;
+  transform: rotate(45deg);
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+.plan-wrap .plan-date .plan-day {
+  position: absolute;
+  top: 43px;
+  left: 25px;
+  font-size: 1.8em;
+  color: #1565c0;
+}
+
+.plan-wrap .showname {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 400px;
+  line-height: 75px;
+  color: #174071;
+  font-size: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+.plan-wrap .showname .plan-empty{
+	color: #888;
+	font-size: 0.8em;
+}
+.plan-wrap .con-user {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 0.9em;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

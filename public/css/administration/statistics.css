@@ -1,0 +1,44 @@
+.statistics-wrap{
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.user-charts,
+.con-charts,
+.visit-charts{
+	height: 300px;
+	width: 500px;
+	margin: 20px 30px;
+	color: #6999d3;
+	border: 1.5px solid #6999d3;
+    border-radius: 2px;
+	background-color: #fff;
+	user-select: none;
+}
+.tab-wrap{
+	height: 30px;
+	border-bottom: 1.2px solid #e0ebf9;
+}
+.tab-wrap .range-tab{
+	float: left;
+	list-style: none;
+	padding: 0 5px;
+	line-height: 30px;
+	border-right: 1.2px solid #e0ebf9;
+	cursor: pointer;
+}
+.tab-wrap .range-tab:hover{
+	background-color: #e0ebf9;
+}
+.tab-wrap .range-tab.active{
+	color: #1565c0;
+	border-bottom: 1.8px solid #1565c0;
+}
+
+.tab-wrap .chart-content{
+	left: 10px;
+}

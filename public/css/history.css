@@ -1,0 +1,521 @@
+.history-wrap {
+  background-color: #fff;
+  padding: 0;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: calc(100vh - 120px);
+  width: 900px;
+  box-shadow: 0 2px 4px 0 rgba(121, 146, 185, 0.54);
+  margin: 40px auto 10px auto;
+  border-radius: 4px;
+}
+.list {
+  width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-right: 1px solid #ededed;
+}
+.list-title {
+  text-align: center;
+  line-height: 35px;
+  height: 36px;
+  overflow: hidden;
+  border-bottom: 1px solid #ededed;
+  color: #174071;
+  /*font-weight: 500;*/
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+.history-wrap .list .search-wrap {
+  min-height: 32px;
+  border-bottom: 1px solid #ededed;
+}
+.history-wrap .list .search-wrap-title {
+  height: 30px;
+}
+.history-wrap .list .show-search-btn {
+  line-height: 30px;
+  color: #174071;
+  font-size: 12px;
+  float: right;
+  padding: 3px 10px 3px 0;
+}
+.history-wrap .list .show-search-btn:hover {
+  cursor: pointer;
+}
+.history-wrap .list .show-search-btn div {
+  float: right;
+}
+.history-wrap .list .order-method-wrap {
+  float: left;
+  margin: 2px 10px 0 15px;
+  line-height: 28px;
+  width: 100px;
+  text-align: center;
+  color: #1565c0;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 1px solid #ededed;
+}
+.history-wrap .list .order-method-wrap .order-text-wrap{
+	font-size: 12px;
+	margin-left:4px;
+}
+.history-wrap .list .order-method-wrap:hover {
+  color: #fff;
+  background-color: rgba(21, 101, 192, 0.5);
+  cursor: pointer;
+}
+.history-wrap .list .search-wrap .search-box .search-by-month-wrap {
+  float: right;
+  margin: 0 0px 0 20px;
+}
+.history-wrap .list .search-wrap .search-box .search-by-keyword-wrap {
+  float: right;
+  margin: 0 40px 0 20px;
+}
+
+.selector .month-selector {
+  /*display: none;*/
+  position: absolute;
+  width: 180px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(21, 101, 192, 0.1),
+    0 4px 8px 0 rgba(21, 101, 192, 0.2);
+  color: #1565c0;
+  font-size: 0.9em;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2px 5px 5px 5px;
+  z-index: 3;
+}
+.selector .month-selector span {
+  display: inline-block;
+  margin: 1px 1px;
+  padding: 4px 4px;
+  width: 50px;
+  text-align: center;
+}
+.selector .month-selector span:hover,
+.selector .month-selector span.chosen {
+  background-color: rgba(21, 101, 192, 0.5);
+  color: #fff;
+  cursor: pointer;
+}
+.month-selector .option-label {
+  font-size: 0.8em;
+  margin: 2px 4px;
+}
+
+.list-content {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 0 35px;
+}
+.list-year-text {
+  line-height: 40px;
+  font-size: 1.4em;
+  color: #1565c0;
+  border-bottom: 1px solid #ededed;
+}
+.list-tips-text {
+  line-height: 40px;
+  font-size: 1.4em;
+  color: #1565c0;
+  border-bottom: 1px solid #ededed;
+}
+.list-item {
+  position: relative;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+  background-color: #fff;
+}
+.list-item:hover {
+  background-color: #e0ebf9;
+  cursor: pointer;
+}
+.list-item div {
+  position: relative;
+}
+.list-item .music-date {
+  position: relative;
+  top: 12px;
+  left: 10px;
+}
+.list-item .music-date .music-month {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  font-size: 1em;
+  color: #1565c0;
+}
+.list-item .music-date .music-line {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  width: 50px;
+  height: 1.5px;
+  background-color: #1565c0;
+  transform: rotate(45deg);
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+.list-item .music-date .music-day {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  font-size: 1.8em;
+  color: #1565c0;
+}
+
+.list-item .music-showname {
+  position: absolute;
+  top: 10px;
+  left: 90px;
+  width: 52%;
+  color: #174071;
+  font-size: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list-item .music-realname {
+  position: absolute;
+  top: 38px;
+  left: 90px;
+  width: 52%;
+  color: #6999d3;
+  font-size: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list-item .music-artist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28%;
+  height: 40px;
+  color: #6999d3;
+  font-size: 1em;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list-item .music-user {
+  position: absolute;
+  bottom: 3px;
+  right: 10px;
+  width: 20%;
+  font-size: 0.8em;
+  color: #888;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.history-wrap .music-wrap {
+  -webkit-box-flex: 1;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+.music-wrap .music-title {
+  height: 36px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #ededed;
+  position: relative;
+  text-align: center;
+  color: #174071;
+}
+.music-wrap .music-infos-wrap {
+  position: relative;
+  min-height: 100px;
+  border-bottom: 1px solid #ededed;
+  background-color: #fff;
+  height: auto;
+}
+.history-wrap .music-infos-wrap .aplayer-wrap {
+  width: 280px;
+  margin: 10px auto 5px auto;
+}
+.history-wrap .music-infos-wrap .open-in-ncm {
+  display:inline-block;
+  line-height: 20px;
+  color: #174071;
+  font-size: 12px;
+  text-align: left;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+.history-wrap .music-infos-wrap .open-in-ncm path {
+    fill: #174071;
+
+}
+.history-wrap .music-infos-wrap .open-in-ncm:hover path {
+    fill: #6999d3;
+}
+.history-wrap .music-infos-wrap .show-infos-btn {
+  display:inline-block;
+  float: right;
+  line-height: 20px;
+  color: #174071;
+  font-size: 12px;
+  text-align: right;
+  padding: 5px 10px 5px 0;
+}
+.history-wrap .music-infos-wrap .show-infos-btn:hover {
+  cursor: pointer;
+}
+.history-wrap .music-infos-wrap .show-infos-btn div {
+  display: inline-block;
+}
+.infos-wrap{
+	overflow-x: hidden;
+    overflow-y: auto;
+}
+.music-infos {
+  color: #1565c0;
+  font-size: 16px;
+  max-height: 220px;
+}
+.music-infos h4 {
+  text-align: center;
+}
+.musicinfos-text {
+  font-size: 0.8em;
+  text-align: left;
+  margin: 10px 15px;
+}
+.musicinfos-text p {
+  margin: 2px 0;
+  color: #6999d3;
+}
+.musicinfos-text span.musicinfos {
+  margin: 3px 0;
+  color: #1565c0;
+}
+.musicinfos-text span {
+  display: inline-block;
+}
+.musicinfos-text span#week,
+.musicinfos-text span#date,
+.musicinfos-text span#ncmid {
+  display: inline-block;
+  margin: 3px 0;
+}
+
+.comment-list {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #f5f5f5;
+}
+.comment-send-box {
+  height: 150px;
+  border-top: 1px solid #ededed;
+  border-bottom-right-radius: 4px;
+  background-color: #fff;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding: 0 16px;
+  position: relative;
+  z-index: 2;
+}
+.com-reply-wrap {
+  font-size: 12px;
+  min-height: 16px;
+  color: #6999d3;
+  margin: 5px;
+}
+.com-reply-cancel {
+  font-size: 11px;
+}
+.com-reply-cancel a:hover {
+  text-decoration: underline;
+  color: #1565c0;
+}
+.comment-textarea {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 60px;
+  width: 260px;
+  border-radius: 4px;
+  padding: 3px 3px 14px 3px;
+  margin: px 0 0 0;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  font-size: 12px;
+  color: #1565c0;
+  font-size: 14px;
+  border: 1px solid #ededed;
+  background-color: rgba(21, 101, 192, 0.05);
+  cursor: text;
+}
+.send-button-wrap {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  height: 40px;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.send-btn {
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  width: 80px;
+  height: 26px;
+  text-align: center;
+  border: 1px solid #ededed;
+  font-size: 14px;
+  background-color: #ededed;
+  color: #888;
+}
+.send-btn.active {
+  background-color: #1565c0;
+  border-color: #1565c0;
+  color: #fff;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  border-radius: 4px;
+}
+.send-btn.active:hover {
+  background-color: #6999d3;
+  border-color: #6999d3;
+}
+.comment-tips {
+  font-size: 12px;
+  text-align: center;
+  color: #6999d3;
+  margin: 20px 0;
+}
+.comment-item {
+  position: relative;
+  color: #1565c0;
+  font-size: 14px;
+  padding: 5px 10px;
+  background-color: transparent;
+  transition: background-color .5s;
+	-moz-transition: background-color .5s; /* Firefox 4 */
+	-webkit-transition: background-color .5s; /* Safari 和 Chrome */
+	-o-transition: background-color .5s; /* Opera */
+}
+.comment-item.twinkle {
+  background-color: #fff;
+  transition: background-color .5s;
+	-moz-transition: background-color .5s; /* Firefox 4 */
+	-webkit-transition: background-color .5s; /* Safari 和 Chrome */
+	-o-transition: background-color .5s; /* Opera */
+}
+.comment-item .com-user {
+  display: inline-block;
+  margin: 10px;
+  font-size: 1.15em;
+}
+.comment-item .com-time {
+  display: inline-block;
+  font-size: 0.85em;
+  color: #6999d3;
+}
+.comment-item .reply-wrap {
+  font-size: 10px;
+  margin: 0 10px 5px 10px;
+  padding: 3px;
+  background-color: rgba(21, 101, 192, 0.05);
+  color: #6999d3;
+}
+.comment-item .reply-wrap .reply-content {
+  display: inline-block;
+  width: 200px;
+  margin: 3px 0 0 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.comment-item .com-content {
+  width: 100%;
+  font-size: 1em;
+  color: #1565c0;
+}
+.comment-item .com-content p {
+  padding: 0 5px 5px 20px;
+}
+.comment-operation {
+  position: relative;
+  text-align: right;
+}
+.com-like {
+  display: inline-block;
+  font-size: 1em;
+  color: #1565c0;
+  margin: 0 8px;
+}
+.com-like:hover {
+  cursor: pointer;
+  color: #6999d3;
+}
+.like-num {
+  margin: 0 0 0 2px;
+  font-size: 12px;
+}
+.com-reply {
+  display: inline-block;
+  font-size: 1em;
+  color: #1565c0;
+  margin: 0 15px 0 0;
+}
+.com-reply:hover {
+  cursor: pointer;
+  color: #6999d3;
+}
+.com-num {
+  margin: 0 0 0 2px;
+  font-size: 12px;
+}

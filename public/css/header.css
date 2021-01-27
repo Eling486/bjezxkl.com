@@ -1,0 +1,107 @@
+.international-header{
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;;
+    position: relative;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    /*z-index: 1;*/
+    width: 100%;
+    height: 56px;
+}
+.international-header *{
+    box-sizing: border-box;
+}
+.international-header ul{
+    list-style: none;
+}
+.international-header a{
+    text-decoration: none;
+}
+.header-content{
+    box-sizing: border-box;
+    padding: 10px 30px;
+    line-height: 30px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.nav-link .nav-link-ul {
+    height: 36px;
+    display: flex;
+    align-items: center;
+}
+.nav-link .nav-link-ul .nav-link-item {
+    margin-right: 20px;
+}
+.nav-link .nav-link-ul .nav-link-item .link,
+.nav-user-center .user-content .link {
+    font-size: 15px;
+    color: #174071;
+    /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);*/
+    display: inline-block;
+    white-space: nowrap;
+    display: flex;
+}
+.nav-link .nav-link-ul .nav-link-item .link:hover,
+.nav-user-center .user-content .link:hover {
+    color:#1565C0;
+    text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.3);
+}
+.nav-link .nav-link-ul .nav-link-item .link span,
+.nav-user-center .user-content .link span {
+    margin-left: 4px;
+    line-height: 36px;
+}
+.international-header a{
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-user-center {
+    display: flex;
+    flex-shrink: 0;
+}
+.nav-user-center .user-content {
+    display: flex;
+    align-items: center;
+}
+.nav-user-center .user-content .nav-user-item {
+    position: relative;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.nav-user-center .user-content .nav-user-item .user-msg{
+    margin: 0;
+}
+.nav-user-center .user-content .nav-user-item .user-tool-wrap{
+    position: absolute;
+    left: -50px;
+    height: auto;
+    width: 120px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    align-items: center;
+}
+.user-tool-wrap .user-tool .link{
+    margin: 8px 0 4px 0;
+    justify-content: center;
+}.user-tool-wrap .user-tool .link:hover{
+    background-color: #e0ebf9;
+}
+.nav-user-item .msg-remind{
+	position: absolute;
+	left: 6px;
+	top: 5px;
+	line-height: 14px;
+	width: auto;
+	padding: 0 3.4px;
+	border-radius: 10px;
+	font-size: 10px;
+	color: #fff;
+	background-color: #f25d64;
+}
