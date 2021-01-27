@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <title><%= title %></title>
+    <meta name="description" content="北京二中下课铃投稿平台">
+    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="/css/cdn/APlayer-1.10.1.min.css">
+    <link rel="stylesheet" href='/font-awesome/css/font-awesome.min.css'>
+    <link rel="stylesheet" type='text/css' href='/m/css/header.css'>
+    <link rel="stylesheet" type='text/css' href='/m/css/basic.css'>
+    <link rel="stylesheet" type='text/css' href='/m/css/administration/con_check.css'>
+	<link rel="stylesheet" type='text/css' href='/css/date-selector.css'>
+    <script type="text/javascript" src="/js/cdn/APlayer-1.10.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/cdn/jquery-3.5.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/common/date-selector.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/header.js" charset="utf-8"></script>
+    <!--[if IE]>
+	  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+    <![endif]-->
+</head>
+
+<body onload="getContribution()">
+    <header class="international-header">
+        <script>refreshHeader()</script>
+    </header>
+    <div class="container">
+        <div class="contribution-wrap">
+            <div class="list">
+                <div class="list-title">
+                    <div class="list-title-text">待审核投稿</div>
+                </div>
+                <div class="search-wrap">
+                    <div class="search-wrap-title">
+                        <div class="order-method-wrap" title="点击切换排列顺序">
+                            <span class="order-icon-wrap">
+                                <i class="fa fa-sort-numeric-asc fa-lg"></i>
+                            </span>
+							<span class="order-text-wrap">由旧到新</span>
+                        </div>
+                        <div class="show-search-btn">
+                            <div class="text">展开搜索框</div>
+                            <div class="icon"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="search-box" style="display: none;">
+                        <div class="input-wrap small search-by-month-wrap">
+                            <span class="icon-span"><i class="input-icon fa fa-calendar-check-o"></i></span>
+                            <span class="input-span">
+                                <input type="text" class="readonly" id='search-month' autocomplete="off"
+                                    oninput="filterList($('.list-content'))" onchange="filterList($('.list-content'))"
+                                    readonly="readonly" placeholder="按月份筛选" /></span>
+                            <span class="clear-span search-month-clear">×</span>
+                            <div class="selector" id="selector"></div>
+                        </div>
+                        <script>
+                            const ds = new dateSelector({
+                                container: document.getElementById('selector'),
+                                type: "month",
+                                allow_year: "byData",
+                                allow_month: "all",
+								data_url: "/contribution/getneedcheck",
+								key: "con_time",
+                                //fill_in: document.getElementById('search-month'),
+                            });
+                        </script>
+                        <div class="input-wrap small search-by-keyword-wrap">
+                            <span class="icon-span"><i class="input-icon fa fa-search"></i></span>
+                            <span class="input-span">
+                                <input type="text" class="editable" id='search-keyword' autocomplete="off"
+                                    oninput="filterList($('.list-content'))" onchange="filterList($('.list-content'))"
+                                    placeholder="关键词搜索" /></span>
+                            <span class="clear-span search-keyword-clear">×</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-content">
+					
+                </div>
+            </div>
+            <div class="check-wrap" style="display: none;">
+				<header class="local-header music-infos-header">
+					<div class='header-content'>
+						<div class='btn-back back'>
+							<div class="btn-back-icon"><i class="back-icon fa fa-fw fa-angle-left fa-2x"></i></div>
+						</div>
+						<div class="header-title">投稿详情</div>
+					</div>
+				</header>
+                <div class="con-infos-wrap">
+                    <div class="aplayer-wrap">
+                        <div class="aplayer" id="aplayer"></div>
+                        <script>
+                            const ap = new APlayer({
+                                container: document.getElementById('aplayer'),
+                                loop: 'none',
+                                theme: '#e9e9e9',
+                                listMaxHeight: '100px',
+                            });
+                        </script>
+                    </div>
+					<div class="open-in-ncm">
+							<span class="icon-ncm"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="15.525" height="17" viewBox="0 0 31.031 34">
+								<path d="M21.279,-0.015 C21.630,0.041 21.985,0.081 22.333,0.156 C23.553,0.419 24.646,0.948 25.611,1.723 C26.244,2.231 26.502,2.894 26.319,3.679 C26.154,4.385 25.693,4.861 24.981,5.064 C24.307,5.256 23.699,5.110 23.146,4.677 C22.445,4.127 21.667,3.747 20.735,3.828 C19.945,3.897 19.190,4.710 19.258,5.436 C19.288,5.761 19.407,6.078 19.491,6.398 C19.640,6.962 19.794,7.525 19.945,8.089 C19.971,8.186 19.996,8.263 20.135,8.271 C22.258,8.384 24.171,9.060 25.876,10.313 C27.552,11.545 28.924,13.024 29.844,14.882 C30.519,16.246 30.897,17.686 30.997,19.197 C31.130,21.206 30.889,23.171 30.090,25.026 C28.232,29.338 24.965,32.119 20.371,33.397 C18.623,33.884 16.832,34.074 15.019,33.973 C11.250,33.763 7.985,32.370 5.235,29.851 C2.521,27.367 0.829,24.312 0.241,20.726 C-0.560,15.848 0.668,11.475 3.917,7.682 C5.701,5.598 7.928,4.097 10.525,3.128 C11.420,2.793 12.399,3.105 12.890,3.869 C13.392,4.650 13.274,5.655 12.579,6.276 C12.383,6.452 12.135,6.591 11.887,6.690 C7.928,8.271 5.313,11.056 4.274,15.118 C3.266,19.058 4.157,22.665 6.730,25.843 C8.343,27.835 10.427,29.173 12.949,29.830 C14.579,30.255 16.226,30.282 17.886,30.031 C19.599,29.772 21.199,29.221 22.634,28.260 C24.608,26.937 26.015,25.174 26.718,22.930 C27.325,20.993 27.346,19.037 26.596,17.115 C25.992,15.568 24.924,14.378 23.585,13.396 C22.870,12.871 22.102,12.462 21.226,12.261 C21.186,12.252 21.145,12.247 21.073,12.236 C21.193,12.684 21.304,13.110 21.419,13.535 C21.697,14.559 21.981,15.582 22.254,16.608 C22.847,18.838 22.273,20.791 20.704,22.455 C19.252,23.995 17.404,24.665 15.285,24.464 C12.925,24.240 11.240,22.987 10.141,20.958 C9.565,19.896 9.317,18.751 9.271,17.553 C9.198,15.645 9.653,13.884 10.770,12.309 C11.970,10.618 13.631,9.533 15.595,8.859 C15.749,8.806 15.906,8.758 16.087,8.699 C15.981,8.306 15.871,7.923 15.776,7.537 C15.645,7.005 15.477,6.476 15.411,5.936 C15.217,4.338 15.718,2.949 16.846,1.785 C17.770,0.833 18.890,0.229 20.232,0.048 C20.380,0.028 20.527,0.006 20.675,-0.015 C20.876,-0.015 21.077,-0.015 21.279,-0.015 ZM17.088,12.387 C15.925,12.749 14.921,13.301 14.168,14.219 C13.161,15.449 12.960,16.862 13.281,18.363 C13.448,19.143 13.838,19.810 14.522,20.276 C15.377,20.858 16.542,20.833 17.436,20.228 C18.350,19.608 18.757,18.609 18.490,17.585 C18.198,16.463 17.887,15.345 17.584,14.225 C17.421,13.623 17.258,13.019 17.088,12.387 Z" class="cls-1"/>
+							</svg></span>
+						</div>
+                    <div class="coninfos-wrap">
+                        <div class="coninfos">
+                            <h4>投稿信息</h4>
+                            <div class="coninfos-text">
+                                <p><span class="coninfos" id="infos" style="display: none;"></span>
+								<p><span class="coninfos-label" id="hope-date">希望播放日期：</span><span class="coninfos"
+                                        id="hope-date"></span></p>
+                                <p><span class="coninfos-label" id="plan-week">预计播放周：</span></p>
+								<div class="plan-week-wrap">
+									<div class="input-wrap middle plan-week-wrap">
+										<span class="input-span">
+											<input type="text" class="editable" id='plan-week' autocomplete="off" placeholder="预计播放周" /></span>
+										<span class=" clear-span plan-week-clear">×</span>
+									</div>
+										<p class="message" id="plan-week"></p>
+								</div>
+                                <p><span class="coninfos-label" id="plan-date">预计播放日期：</span></p>
+								<div class="plan-date-wrap">
+									<div class="input-wrap middle plan-date-wrap">
+										<span class="input-span">
+											<input type="text" class="onlyread date-selector" id='plan-date' autocomplete="off" readonly="readonly" placeholder="预计播放日期" /></span>
+										<span class=" clear-span plan-date-clear">×</span>
+										<div class="plan-date-picker" id="plan-date-picker"></div>
+										<script>
+											const ds2 = new dateSelector({
+												container: '#plan-date-picker',
+												type: "date",
+												allow_year: "future",
+												allow_month: "future",
+												fill_in: 'input#plan-date',
+											});
+										</script>
+									</div>		
+									<p class="message" id="plan-date"></p>
+								</div>
+                                <p><span class="coninfos-label" id="ncmid">网易云id：</span><span class="coninfos"
+                                        id="ncmid"></span></p>
+								<p><span class="coninfos-label" id="state">版权状态：</span><span class="coninfos"
+                                        id="state"></span></p>
+                                <p><span class="coninfos-label" id="realname">实际名称：</span></p>
+								<div class="realname-wrap">
+									<div class="input-wrap middle realname-wrap">
+										<span class="input-span">
+											<input type="text" class="editable" id='realname' autocomplete="off" placeholder="实际名称" /></span>
+										<span class=" clear-span realname-clear">×</span>
+									</div>
+										<p class="message" id="realname"></p>
+								</div>
+                                <p><span class="coninfos-label" id="hope-showname">希望显示名称：</span><span class="coninfos"
+                                        id="hope-showname"></span></p>
+								<p><span class="coninfos-label" id="showname">预计显示名称：</span></p>
+								<div class="showname-wrap">
+									<div class="input-wrap middle showname-wrap">
+										<span class="input-span">
+											<input type="text" class="editable" id='showname' autocomplete="off" placeholder="预计显示名称" /></span>
+										<span class=" clear-span showname-clear">×</span>
+									</div>
+										<p class="message" id="showname"></p>
+								</div>
+                                <p><span class="coninfos-label" id="artist">音乐人：</span></p>
+								<div class="artist-wrap">
+									<div class="input-wrap middle artist-wrap">
+										<span class="input-span">
+											<input type="text" class="editable" id='artist' autocomplete="off" placeholder="音乐人" /></span>
+										<span class=" clear-span artist-clear">×</span>
+									</div>
+										<p class="message" id="artist"></p>
+								</div>
+                                <p><span class="coninfos-label" id="con-user">投稿人：</span><span class="coninfos"
+                                        id="con-user"></span></p>
+								<p><span class="coninfos-label" id="con-time">投稿时间：</span><span class="coninfos"
+                                        id="con-time"></span></p>
+								<p><span class="coninfos-label" id="con-note">投稿备注：</span><span class="coninfos"
+                                        id="con-note"></span></p>
+								<p><span class="coninfos-label" id="check-type">审核结果：</span></p>
+								<div class="type-wrap">
+									<span class="type-span choosing" id="waiting">待审核</span>
+									<span class="type-span" id="success">已录用</span>
+									<span class="type-span" id="fail">未录用</span>
+								</div>
+								<p><span class="coninfos-label" id="check-note">审核备注：</span><span class="coninfos"
+                                        id="check-note"></span></p>
+								<div class="check-note-wrap">
+									<div class="input-wrap middle check-note-wrap">
+										<span class="input-span">
+											<input type="text" class="editable" id='check-note' autocomplete="off" placeholder="审核备注" /></span>
+										<span class=" clear-span check-note-clear">×</span>
+									</div>
+										<p class="message" id="check-note"></p>
+								</div>
+								<div class="btn-check-cancel grey clearfix">
+									<div class="input-wrap-btn middle">
+											<input type="button" class="btn btn-check-cancel" value="取消审核" id="cancel" />
+									</div>
+								</div>
+								<div class="btn-check-submit clearfix">
+									<div class="input-wrap-btn middle">
+											<input type="button" class="btn btn-check-submit" value="提交审核结果" id="submit" />
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/common/input.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/search.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/header.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/m/js/administration/concheck.js" charset="utf-8"></script>
+    <script src="https://acstatic-dun.126.net/tool.min.js"></script>
+</body>
+
+</html>

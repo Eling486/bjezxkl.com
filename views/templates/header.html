@@ -1,0 +1,79 @@
+<div class='header-content'>
+    <div class='nav-link'>
+        <ul class='nav-link-ul'>
+            <li class='nav-link-item'>
+                <a href='/' class='link'>
+                    <i class='menu-icon fa fa-home' aria-hidden='true'><span>主页</span></i>
+                </a>
+            </li>
+            <li class='nav-link-item'>
+                <a href='/plan' class='link'>
+                    <i class='menu-icon fa fa-calendar-check-o' aria-hidden='true'><span>安排</span></i>
+                </a>
+            </li>
+            <li class='nav-link-item'>
+                <a href='/history' class='link'>
+                    <i class='menu-icon fa fa-history' aria-hidden='true'><span>历史</span></i>
+                </a>
+            </li>
+            <li class='nav-link-item'>
+                <a href='/contribute' class='link'>
+                    <i class='menu-icon fa fa-upload' aria-hidden='true'><span>投稿</span></i>
+                </a>
+            </li>
+            <li class='nav-link-item'>
+                <a class='link administration'>
+                    <i class='menu-icon fa fa-edit' aria-hidden='true'><span>管理</span></i>
+                </a>
+            </li>
+            <li class='nav-link-item'>
+                <a href='/about' class='link'>
+                    <i class='menu-icon fa fa-info' aria-hidden='true'><span>关于</span></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class='nav-user-center'>
+        <div class='user-content'>
+            <div class='nav-user-item nav-user-infos'>
+                <div class='login'>
+                    <a href='javascript:;' class='link link-login' onclick='showQuickLogin()'>
+                        <span class='user-msg'><%= user_msg %></span>
+                    </a>
+                </div>
+                <div class='user-infos'>
+                    <a href='/user' class='link link-user' target='_blank'><span class='username'
+                            title='用户中心'><%= user %></span></a>
+                    <div class='user-tool-wrap' style='display: none;'>
+                        <div class='user-tool user-center'>
+                            <a href='/user' class='link link-user-center' target='_blank'>
+                                <i class='menu-icon fa fa-user-circle-o' aria-hidden='true'><span
+                                        class='user-center'>用户中心</span></i>
+                            </a>
+                        </div>
+                        <div class='user-tool logout'>
+                            <a href='javascript:;' class='link link-logout'>
+                                <i class='menu-icon fa fa-sign-out' aria-hidden='true'><span
+                                        class='logout'>点击登出</span></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='nav-user-item nav-msg'>
+                <a class='link link-msg' href='/message/#/' target='_blank'>
+					<div class='msg-remind'></div>
+                    <i class='menu-icon fa fa-envelope' aria-hidden='true'><span class='msg'>消息</span></i>
+					<a class='open-msg-page' href='/message/#/' target='_blank' style='display: none;'>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/common/header.js" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		getRemindNum()
+	})
+</script>

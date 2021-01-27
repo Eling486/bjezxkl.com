@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <title><%= title %></title>
+    <meta name="description" content="北京二中下课铃投稿平台">
+    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="/css/cdn/APlayer-1.10.1.min.css">
+    <link rel="stylesheet" href='/font-awesome/css/font-awesome.min.css'>
+    <link rel="stylesheet" type='text/css' href='/m/css/header.css'>
+    <link rel="stylesheet" type='text/css' href='/m/css/basic.css'>
+    <link rel="stylesheet" type='text/css' href='/m/css/contribute.css'>
+    <link rel="stylesheet" type='text/css' href='/css/date-selector.css'>
+    <script type="text/javascript" src="/js/cdn/APlayer-1.10.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/cdn/jquery-3.5.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/common/date-selector.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/header.js" charset="utf-8"></script>
+    <!--[if IE]>
+	  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+    <![endif]-->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?cdf18813dd6d3bb20583e2af55214779";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+
+<body onload="getInLineNum();getConNum()">
+    <header class="international-header">
+        <script>refreshHeader()</script>
+    </header>
+    <div class="container">
+        <div class="con-box">
+            <div class="ncmurl-wrap">
+                <div class="input-wrap middle ncmurl-wrap">
+                    <span class="input-span">
+                        <input type="text" class="editable" id='ncmurl' autocomplete="on"
+                            placeholder="请在此粘贴网易云链接" /></span>
+                    <span class="clear-span ncmurl-clear">×</span>
+                </div>
+                <p class="message" id="ncmurl"></p>
+            </div>
+            <div class="btn-get clearfix">
+                <div class="input-wrap-btn middle">
+                    <input type="button" class="btn btn-get" value="搜索" id="submit" onclick="getNCMMusic()" />
+                </div>
+            </div>
+            <div class="infos-content">
+                <div class="con-reqs">
+					<p class="req-text inline-num"><p>
+					<p class="req-text con-num"><p>
+					<br />
+                    <p class="req-text">下面来看看稿件需要满足什么要求叭(〃'▽'〃)</p>
+                    <br />
+                    <ul class="req-list">
+                        <li class="req-list-text"><b>无人声</b>，所有的下课铃都需要是无人声的版本，包括人声哼唱哦</li>
+                        <li class="req-list-text"><b>电子音乐</b>的录用可能性<b>比较低</b>，要有心理准备_(:3</li>
+                        <li class="req-list-text">有好听的<b>古典音乐</b>可以推荐给我们吖</li>
+                    </ul>
+					<br />
+					<p class="req-text" style="font-size: 1.1em;">注意哦，每人每月最多只能投 <b>4个</b> 稿件哟！</p>
+                    <br />
+                    <p class="req-text">网易云音乐的分享界面选择[拷贝链接]或者直接复制[歌曲页面]的链接，再粘贴到上面就可以投稿嘞</p>
+                    <p class="req-text">需要会员下载的歌曲也可以投稿，但电台歌曲不可以orz</p>
+                    <!--<p class="req-text">如果还有疑问的话，可以来 <a href="/contribute/tutorial" title="查看图文教程" class='external'
+                            rel='nofollow'>这里</a> 查看图文教程呦</p>-->
+                    <br />
+                    <p class="req-text">多多投稿就可以知道什么样的稿件可以入选啦！期待大家的投稿！</p>
+                    <br />
+                    <p>我们的网易云账号是-<a href="https://music.163.com/#/user/home?id=295882415" title="跳转至网易云账号"
+                            target='_blank' class='external'
+                            rel='nofollow'>北京二中下课铃收集簿</a>-。为了提高效率，我们会逐渐减少私信投稿的录取量，将投稿转移到这个平台上。还是麻烦大家在这个平台投稿啦
+                        (*･ω< ) </p>
+                </div>
+                <div class="infos-wrap" style="display: none;">
+                    <div class="aplayer" id="aplayer"></div>
+                    <script>
+                        const ap = new APlayer({
+                            container: document.getElementById('aplayer'),
+                            loop: 'one',
+                            theme: '#e9e9e9',
+                        });
+                    </script>
+                    <div class="con-infos">
+                        <p class="con-infos-row" id="ncmid">
+                            <span class="infos-lab" id="ncmid">网易云ID：</span>
+                            <span class="infos-text"></span>
+                        </p>
+                        <p class="con-infos-row" id="realname">
+                            <span class="infos-lab" id="realname">实际名称：</span>
+                            <span class="infos-text"></span>
+                        </p>
+                        <p class="con-infos-row" id="artist">
+                            <span class="infos-lab" id="artist">音乐人：</span>
+                            <span class="infos-text"></span>
+                        </p>
+                        <p class="con-infos-row" id="state" style="display: none;">
+                            <span class="infos-lab" id="artist">版权状态：</span>
+                            <span class="infos-text"></span>
+                        </p>
+                        <p class="con-infos-row" id="hope-showname">
+                            <span class="infos-lab" id="hope-showname">希望显示名称（限15字）：</span>
+                        <div class="hope-showname-wrap">
+                            <div class="input-wrap other hope-showname-wrap">
+                                <span class="input-span">
+                                    <input type="text" class="editable" id='hope-showname' autocomplete="off"
+                                        placeholder="是中文译名哦~" maxlength=15/></span>
+                                <span class=" clear-span hope-showname-clear">×</span>
+                            </div>
+                            <p class="message" id="hope-showname"></p>
+                        </div>
+                        </p>
+                        <p class="con-infos-row" id="hope-date">
+                            <span class="infos-lab" id="hope-date">希望播放日期：</span>
+                        <div class="hope-date-wrap">
+                            <div class="input-wrap other hope-date-wrap">
+                                <span class="input-span">
+                                    <input type="text" class="onlyread date-selector" id='hope-date' autocomplete="on"
+                                        readonly="readonly" placeholder="点击选择日期（仅可选择未来日期）" /></span>
+                                <span class=" clear-span hope-date-clear">×</span>
+                                <div class="hope-date-picker" id="hope-date-picker">
+
+                                </div>
+                                <script>
+                                    const ds = new dateSelector({
+                                        container: '#hope-date-picker',
+                                        type: "date",
+                                        allow_year: "future",
+                                        allow_month: "future",
+                                        fill_in: 'input#hope-date',
+                                    });
+                                </script>
+                            </div>
+                            <p class="message" id="hope-date"></p>
+                        </div>
+                        </p>
+                        <p class="con-infos-row" id="con-note">
+                            <span class="infos-lab" id="con-note">投稿备注：</span>
+                        <div class="con-note-wrap">
+                            <div class="input-wrap other con-note-wrap">
+                                <span class="input-span">
+                                    <input type="text" class="editable" id='con-note' autocomplete="on"
+                                        placeholder="限40字以内" maxlength=40/></span>
+                                <span class=" clear-span con-note-clear">×</span>
+                            </div>
+                            <p class="message" id="con-note"></p>
+                        </div>
+                        </p>
+                        <div class="btn-submit clearfix">
+                            <div class="input-wrap-btn other">
+                                <input type="button" class="btn btn-submit" value="确认投稿" id="con-submit" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/common/input.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/header.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/contribute.js" charset="utf-8"></script>
+</body>
+
+</html>

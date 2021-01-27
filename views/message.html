@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <meta name="description" content="北京二中下课铃投稿平台">
+  <meta name="viewport" content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="/css/cdn/APlayer-1.10.1.min.css">
+  <link rel="stylesheet" href='/font-awesome/css/font-awesome.min.css'>
+  <link rel="stylesheet" type='text/css' href='/css/header.css'>
+  <link rel="stylesheet" type='text/css' href='/css/basic.css'>
+  <link rel="stylesheet" type='text/css' href='/css/message.css'>
+  <script type="text/javascript" src="/js/cdn/jquery-3.5.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/common/header.js" charset="utf-8"></script>
+  <!--<script type="text/javascript">
+    var mobile = mobileTest();
+    if (mobile == true) {
+      window.location.href = window.location.href.replace("//www", "//m");
+    }
+    function mobileTest() {
+      var userAgentInfo = window.navigator.userAgent;
+      var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPod"];
+      var mobile = false;
+      for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+          mobile = true;
+          break;
+        }
+      }
+      return mobile;
+    }
+  </script>-->
+  <!--[if IE]>
+	  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+    <![endif]-->
+</head>
+
+<body onload="pageLoaded()" onhashchange="hashChanged()">
+  <header class="international-header">
+    <script>refreshHeader()</script>
+  </header>
+  <div class="container">
+	<div class="message-wrap">
+		<div class="message-sidebar">
+			<div class="title">
+				<i class="title-icon fa fa-envelope" aria-hidden="true"><span class="msg">消息</span></i>
+			</div>
+			<ul class="list">
+				<li class="list-item" id="system"><a class="list-tab" href="/message/#/system">系统消息</a><div class="remind" id="system"></div></li>
+				<!--该功能暂未开放-->
+				<!--<li class="list-item" id="message"><a class="list-tab" href="/message/#/msg">我的消息</a><div class="remind" id="message"></div></li>-->
+				<li class="list-item" id="like"><a class="list-tab" href="/message/#/like">收到的赞</a><div class="remind" id="like"></div></li>
+				<li class="list-item" id="comment"><a class="list-tab" href="/message/#/comment">回复我的</a><div class="remind" id="comment"></div></li>
+			</ul>
+		</div>
+		<div class="message-content">
+			<div class="title"></div>
+			<div class="list">
+				<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+  </div>
+  <script type="text/javascript" src="/js/common/input.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/common/common.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/common/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/message.js" charset="utf-8"></script>
+</body>
+
+</html>

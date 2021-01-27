@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <title><%= title %></title>
+    <meta name="description" content="北京二中下课铃投稿平台">
+    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="/css/cdn/APlayer-1.10.1.min.css">
+    <link rel="stylesheet" href='/font-awesome/css/font-awesome.min.css'>
+    <link rel="stylesheet" type='text/css' href='/m/css/header.css'>
+    <link rel="stylesheet" type='text/css' href='/m/css/basic.css'>
+    <link rel="stylesheet" type='text/css' href='/m/css/administration/makeplan.css'>
+	<link rel="stylesheet" type='text/css' href='/m/css/date-selector.css'>
+    <script type="text/javascript" src="/js/cdn/APlayer-1.10.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/cdn/jquery-3.5.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/common/date-selector.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/header.js" charset="utf-8"></script>
+    <!--[if IE]>
+	  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+    <![endif]-->
+</head>
+
+<body onload="getContribution()">
+    <header class="international-header">
+        <script>refreshHeader()</script>
+    </header>
+    <div class="container">
+        <div class="makeplan-wrap">
+			<div class="plan-wrap" style="display: none;">
+				<div class="plan-title">安排确认<span style="color: darkorange;">（更改安排请前往PC端）</span></div>
+				<div class="plan-info-wrap">
+					<div class="plan-info" id="btns">
+						<span class="btn" id="prev-week">‹</span>
+						<span class="class-text" week="1">日期范围</span>
+						<span class="btn active" id="next-week">›</span>
+					</div>
+					<div class="plan-info" id="week"><span class="day-start"></span><span> ~ </span><span class="day-end"></span></div>
+				</div>
+				<div class="plan-content">
+					
+				</div>
+			</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/common/input.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/search.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/m/js/common/header.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/m/js/administration/makeplan.js" charset="utf-8"></script>
+    <script src="https://acstatic-dun.126.net/tool.min.js"></script>
+</body>
+
+</html>

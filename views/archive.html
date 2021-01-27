@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <meta name="description" content="北京二中下课铃投稿平台">
+  <meta name="viewport" content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="/css/cdn/APlayer-1.10.1.min.css">
+  <link rel="stylesheet" href='/font-awesome/css/font-awesome.min.css'>
+  <link rel="stylesheet" type='text/css' href='/css/header.css'>
+  <link rel="stylesheet" type='text/css' href='/css/basic.css'>
+  <link rel="stylesheet" type='text/css' href='/css/administration/archive.css'>
+  <script type="text/javascript" src="/js/cdn/jquery-3.5.1.min.js" charset="utf-8"></script>
+  <script src="https://cdn.bootcss.com/marked/0.8.0/marked.min.js"></script>
+  <script type="text/javascript" src="/js/common/header.js" charset="utf-8"></script>
+  <!--<script type="text/javascript">
+    var mobile = mobileTest();
+    if (mobile == true) {
+      window.location.href = window.location.href.replace("//www", "//m");
+    }
+    function mobileTest() {
+      var userAgentInfo = window.navigator.userAgent;
+      var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPod"];
+      var mobile = false;
+      for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+          mobile = true;
+          break;
+        }
+      }
+      return mobile;
+    }
+  </script>-->
+  <!--[if IE]>
+	  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+    <![endif]-->
+</head>
+
+<body onload="pageLoaded()" onhashchange="hashChanged()">
+  <header class="international-header">
+    <script>refreshHeader()</script>
+  </header>
+  <div class="container">
+    <div class="archive-wrap">
+      <div class="archive-sidebar">
+        <div class="title">
+          <i class="title-icon fa fa-archive" aria-hidden="true"><span class="archive">高级管理</span></i>
+        </div>
+        <ul class="list">
+          <li class="list-item" id="update"><a class="list-tab" href="/administration/archive/#/update">状态更新</a></li>
+          <li class="list-item" id="replenish"><a class="list-tab" href="/administration/archive/#/replenish">音乐补全</a>
+          </li>
+          <li class="list-item" id="create"><a class="list-tab" href="/administration/archive/#/create">添加数据</a></li>
+        </ul>
+      </div>
+      <div class="archive-content">
+        <div class="title"></div>
+        <div class="list">
+          <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/js/common/input.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/common/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/common/header.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/administration/archive.js" charset="utf-8"></script>
+</body>
+
+</html>
