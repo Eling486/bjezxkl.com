@@ -1,0 +1,33 @@
+.option-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 60px auto 10px auto;
+}
+.option{
+  position: relative;
+  background-color: #fff;
+  padding: 10px 20px;
+  margin: 20px 10px;
+  height: 60px;
+  width: 70px;
+  text-align: center;
+  color: #1565c0;
+  border: 1.5px solid #6999d3;
+  border-radius: 2px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+.option:active{
+	box-shadow: 0 2px 4px 0 rgba(121, 146, 185, 0.54);
+}
+.option-icon-wrap{
+	line-height: 25px;
+}
+.option-icon-wrap i.fa{
+	margin:auto 0;
+}

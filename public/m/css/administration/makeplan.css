@@ -1,0 +1,242 @@
+.makeplan-wrap {
+  background-color: #fff;
+  padding: 0;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: calc(100vh - 45px);
+  box-shadow: 0 2px 4px 0 rgba(121, 146, 185, 0.54);
+  margin: 45px auto 0 auto;
+  border-radius: 4px;
+}
+.plan-wrap{
+	flex: 1;
+	color: #1565c0;
+	min-width: 300px;
+}
+.plan-wrap .plan-title {
+    height: 36px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid #ededed;
+    position: relative;
+    text-align: center;
+    color: #174071;
+}
+.plan-info-wrap{
+	border-bottom: 1px solid #ededed;
+}
+.plan-info-wrap .plan-info#btns{
+	text-align: center;
+	font-size: 1.1em;
+}
+.plan-info-wrap .plan-info#week{
+	text-align: center;
+	font-size: 1.1em;
+}
+.plan-info-wrap .plan-info .btn{
+	display: inline-block;
+    font-size: 1.3em;
+    width: 25px;
+    line-height: 25px;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+}
+.plan-info-wrap .plan-info .btn:active{
+	color: #fff;
+	background-color: #6999d3;
+}
+.plan-wrap{
+	height: 100%;
+}
+.plan-content{
+	position: relative;
+	overflow-x: hidden;
+    overflow-y: auto;
+	height: calc(100% - 84px);
+}
+.plan{
+  position: relative;
+  height: 90px;
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+  background-color: #fff;
+}
+.plan#none{
+  position: relative;
+  height: 30px;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: none;
+  background-color: #fff;
+  font-size: 1.1em;
+  text-align: center;
+}
+.plan div {
+  position: relative;
+}
+.plan .plan-time {
+  position: relative;
+  top: 7px;
+  left: 10px;
+}
+.plan .plan-time .weekday{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 1.3em;
+	color: #1565c0;
+}
+.plan .plan-time .month {
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  font-size: 0.9em;
+  color: #1565c0;
+}
+.plan .plan-time .line {
+  position: absolute;
+  top: 55px;
+  left: 0px;
+  width: 50px;
+  height: 1.5px;
+  background-color: #1565c0;
+  transform: rotate(45deg);
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+.plan .plan-time .day {
+  position: absolute;
+  top: 50px;
+  left: 25px;
+  font-size: 1.6em;
+  color: #1565c0;
+}
+.plan .showname {
+  position: absolute;
+  top: 15px;
+  left: 90px;
+  width: 50%;
+  color: #174071;
+  font-size: 1.1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.plan .showname .infos-empty{
+	color:#888;
+}
+.plan .realname {
+  position: absolute;
+  top: 40px;
+  left: 90px;
+  width: 52%;
+  color: #6999d3;
+  font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.plan .state {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 45px;
+  height: 40px;
+  font-size: 1em;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.plan .state .state-ok{
+	color: #888;
+}
+.plan .state .state-vip{
+	color: darkorange;
+}
+.plan .state .state-error{
+	color: red;
+}
+.plan .cid {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  width: 20%;
+  font-size: 0.8em;
+  color: #888;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.plan .tips{
+  position: absolute;
+  display: block;
+  bottom: 3px;
+  right: 10px;
+  line-height: 16px;
+  width: 74%;
+  font-size: 0.85em;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.plan .tips .error{
+	color: #f25d64;
+}
+.plan .tips .warning{
+	color: darkorange;
+}
+.plan .tips .ok{
+	color: green;
+}
+.plan-wrap .plan-content .btn-all-confirm .input-wrap-btn input[type="button"]{
+	margin: 20px 0 10px 0;
+}
+.plan-wrap .plan-content .btn-confirm-update .input-wrap-btn input[type="button"]{
+	margin: 10px 0 10px 0;
+}
+.plan-wrap .plan-content .btn-download .input-wrap-btn input[type="button"]{
+	margin: 10px 0 20px 0;
+}
+.plan-wrap .plan-content .btn-all-confirm .input-wrap-btn input[type="button"],
+.plan-wrap .plan-content .btn-confirm-update .input-wrap-btn input[type="button"]{
+	
+    border: 1.5px solid #ccc;
+    background-color: #ededed;
+    color: #888;
+}
+.plan-wrap .plan-content .btn-all-confirm .input-wrap-btn input[type="button"]:active,
+.plan-wrap .plan-content .btn-confirm-update .input-wrap-btn input[type="button"]:active{
+    cursor: not-allowed;
+}
+.plan-wrap .plan-content .btn-all-confirm.active .input-wrap-btn input[type="button"],
+.plan-wrap .plan-content .btn-confirm-update.active .input-wrap-btn input[type="button"]{
+	background-color: #1565C0;
+    color: #fff;
+    border: none;
+}
+.plan-wrap .plan-content .btn-all-confirm.active .input-wrap-btn input[type="button"]:active,
+.plan-wrap .plan-content .btn-confirm-update.active .input-wrap-btn input[type="button"]:active {
+	background-color: #6999d3;
+	cursor: pointer;
+}
+
+.list-loading{
+	text-align: center;
+	margin-top: 50px;
+}

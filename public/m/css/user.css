@@ -1,0 +1,124 @@
+.user-center-wrap{
+	margin: 80px auto 0 auto;
+}
+.user-center-sidebar{
+	position: fixed;
+	top: 45px;
+	left: 0;
+	height: 35px;
+	width: 100vw;
+	background-color: #fff;
+	margin-right: 10px;
+	border-bottom: 1px solid #ededed;
+}
+.user-center-sidebar .list-item{
+	position: relative;
+	display: inline-block;
+	padding: 0 3px;
+	line-height: 35px;
+	margin-left: 5px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.user-center-sidebar .list-item a{
+	display: block;
+	color: #174071;
+	width: 100%;
+	line-height: 33px;
+}
+.user-center-sidebar .list-item:active{
+	/*background-color: #e0ebf9;*/
+}
+.user-center-sidebar .list-item.active{
+	/*background-color: #a6c3e5;*/
+	border-bottom: 2px solid #a6c3e5;
+}
+.user-center-sidebar .list-item.active a{
+	color: #1565c0;
+}
+.user-center-sidebar .list-item .remind{
+	position: absolute;
+    right: 8px;
+    top: 12.5px;
+    line-height: 14px;
+    width: auto;
+    padding: 0 3.4px;
+    border-radius: 10px;
+    font-size: 10px;
+    color: #fff;
+    background-color: #f25d64;
+}
+.user-center-content{
+	background-color: #fff;
+	color: #174071;
+}
+.user-center-content .list{
+	overflow-x: none;
+	overflow-y: auto;
+	height: calc(100vh - 80px);
+}
+.user-center-content .list i.fa-spinner{
+	margin: 150px auto;
+	width: 100%;
+}
+.user-center-content .list .user-infos{
+	padding: 30px 80px;
+	font-size: 0.98em;
+}
+.user-center-content .list .user-infos p{
+	line-height: 25px;
+	color: #6999d3;
+}
+.user-center-content .list .user-infos p span{
+	color: #1565c0;
+}
+.user-center-content .list .user-infos .type.admin,
+.user-center-content .list .user-infos .type.super{
+	color: green;
+}
+.user-center-content .list .user-infos .type.banned{
+	color: red;
+}
+.user-center-content .list .not-open{
+	margin-top: 30px;
+	text-align: center;
+	color: #1565c0;
+	font-size: 1.1em;
+}
+.user-center-content .list .not-open p{
+	line-height: 30px;
+}
+.user-center-content .list-item{
+	padding: 10px 15px;
+	border-bottom: 1px solid #ededed;
+}
+.user-center-content .list-item.contribution .con-title{
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.user-center-content .list-item.contribution .con-content{
+	margin-left: 10px;
+	color: #1565c0;
+	font-size: 0.9em;
+}
+.user-center-content .list-item.contribution .con-content .revisable.false{
+	color: red;
+}
+.user-center-content .list-item.contribution .con-content .revisable.true{
+	color: green;
+}
+.user-center-content .list-item.contribution .con-content .infos-empty{
+	color: #888;
+}
+.check-type-text#waiting{
+	color: #6999d3;
+}
+.check-type-text#fail{
+	color: red;
+}
+.check-type-text#success,.check-type-text#ready{
+	color: green;
+}
+.check-type-text#used{
+	color: #888;
+}

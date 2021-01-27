@@ -1,0 +1,36 @@
+.container{
+	margin: 80px 0;
+	color: #174071;
+}
+.container h2{
+	text-align: center;
+	line-height: 40px;
+	margin-bottom: 5px;
+}
+.container h3{
+	line-height: 35px;
+}
+.container p{
+	line-height: 28px;
+}
+.staff-wrap{
+	display: block;
+	background-color: #fff;
+	padding: 15px;
+	margin: 25px;
+	
+	/*border: 1.5px solid #6999d3;*/
+	box-shadow: 1px 1px 7px 0px rgba(121, 146, 185, 0.5);
+}
+.text-empty{
+	color: #999;
+}
+.report-wrap{
+	display: block;
+	font-size:1.2em;
+	background-color: #fff;
+	padding: 20px;
+	margin: 35px 25px 25px 25px;
+	/*border: 1.5px solid #6999d3;*/
+	box-shadow: 1px 1px 7px 0px rgba(121, 146, 185, 0.5);
+}

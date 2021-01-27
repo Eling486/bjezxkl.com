@@ -1,0 +1,201 @@
+.international-header,
+.local-header{
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+    position: fixed;
+	top:0px;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: 45px;
+}
+.international-header *,
+.local-header *{
+    box-sizing: border-box;
+}
+.international-header ul,
+.local-header ul{
+    list-style: none;
+}
+.international-header a,
+.local-header a{
+    text-decoration: none;
+}
+.international-header .header-content{
+    box-sizing: border-box;
+    padding: 10px 15px;
+    line-height: 25px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.local-header .header-content{
+	padding: 10px 5px;
+	box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.local-header .header-content .btn-back i{
+	line-height: 25px;
+}
+.nav-link{
+	display:flex;
+	justify-content:space-between;
+}
+.nav-link-open{
+	height: 25px;
+    display: flex;
+    align-items: center;
+	    font-size: 15px;
+    color: #174071;
+    /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);*/
+    white-space: nowrap;
+}
+.nav-link .nav-link-ul {
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+.nav-link .home-link-ul .home-link-item {
+    margin-left: 15px;
+}
+.nav-link .home-link-ul .home-link-item .link,
+.nav-user-center .user-content .link {
+    font-size: 15px;
+    color: #174071;
+    /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);*/
+    display: inline-block;
+    white-space: nowrap;
+    display: flex;
+}
+.nav-link .nav-link-open:active,
+.nav-link .home-link-ul .home-link-item .link:active,
+.nav-link-close:active,
+.nav-user-center .user-content .link:active {
+    color:#1565C0;
+    text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.3);
+}
+.nav-link .home-link-ul .home-link-item .link span,
+.nav-user-center .user-content .link span {
+    margin-left: 4px;
+    line-height: 25px;
+}
+.nav-link-close{
+	height: 45px;
+	line-height: 25px;
+	padding: 10px 15px;
+	color: #174071;
+	font-size:15px;
+}
+.wrapper-nav-popup{
+	position:fixed;
+	height:100%;
+	width:100%;
+	z-index: 10001;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.25);
+}
+.nav-popup{
+	width: 30vw;
+	height:100%;
+	background: #fff;
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+	font-size: 16px;
+	transition: width .2s;
+	-moz-transition: width .2s;	/* Firefox 4 */
+	-webkit-transition: width .2s;	/* Safari 和 Chrome */
+	-o-transition: width .2s;	/* Opera */
+}
+.nav-popup.hide{
+	width: 0;
+	transition: width .3s;
+	-moz-transition: width .3s;	/* Firefox 4 */
+	-webkit-transition: width .3s;	/* Safari 和 Chrome */
+	-o-transition: width .3s;	/* Opera */
+}
+.nav-popup i{
+	display: none;
+}
+.nav-link-item{
+	width: 100%;
+	text-align: right;
+	padding:5px 8vw 5px 0;
+}
+.nav-link-item a{
+	color: #174071;
+}
+.nav-link-item:active{
+	background-color: #e0ebf9;
+	color: #fff;
+}
+.nav-link-item i span{
+	margin-left:5px;
+}
+.international-header a{
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-user-center {
+    display: flex;
+    flex-shrink: 0;
+}
+.nav-user-center .user-content {
+    display: flex;
+    align-items: center;
+}
+.nav-user-center .user-content .nav-user-item {
+    position: relative;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.nav-user-center .user-content .nav-user-item .user-msg{
+    margin: 0;
+}
+.nav-user-center .user-content .nav-user-item .user-tool-wrap{
+    position: absolute;
+    left: -50px;
+    height: auto;
+    width: 120px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    align-items: center;
+}
+.user-tool-wrap .user-tool .link{
+    margin: 8px 0 4px 0;
+    justify-content: center;
+}.user-tool-wrap .user-tool .link:active{
+    background-color: #e0ebf9;
+}
+.local-header .header-title{
+	position:fixed;
+	left: 0;
+	right: 0;
+	width: 70vw;
+	text-align: center;
+	font-size:17px;
+	line-height: 25px;
+	margin:0 auto;
+	color: #174071;
+}
+.nav-user-item .msg-remind{
+	position: absolute;
+	left: 6px;
+	top: 0px;
+	line-height: 14px;
+	width: auto;
+	padding: 0 3.4px;
+	border-radius: 10px;
+	font-size: 10px;
+	color: #fff;
+	background-color: #f25d64;
+}

@@ -1,0 +1,78 @@
+.date-selector.date{
+    position: absolute;
+    top: 30px;
+    width: 200px;
+    height: 220px;
+    box-shadow: 0 2px 2px 0 rgba(21, 101, 192, 0.1),
+    0 4px 8px 0 rgba(21, 101, 192, 0.2);
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 10;
+    padding: 8px;
+    font-size: 14px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+.date-selector.date .year-and-month{
+    text-align: center;   
+}
+.date-selector.date .year-and-month span.btn{
+    display: inline-block;
+    font-size: 1.3em;
+    width: 25px;
+    line-height: 25px;
+}
+.date-selector.date .year-and-month span.btn:hover{
+    cursor: not-allowed;
+}
+.date-selector.date .year-and-month span.btn.active:active{
+    background-color: #6999d3;
+    color: #fff;
+    cursor: pointer;
+}
+.date-selector.date.future .year-and-month .text#year-month{
+    margin: 0 5px;
+}
+.date-selector.date .calendar-content{
+    text-align: center;
+    margin-top: 3px;
+}
+
+.date-selector.date .calendar-content span.calendar-item,
+.date-selector.date .calendar-content span.calendar-row-title{
+    display: inline-block;
+    line-height: 25px;
+    width: 25px;
+    text-align: center;
+    margin: 0;
+    padding: 1px;
+    background-color: #fff;
+}
+.date-selector.date .calendar-content span.calendar-item{
+    background-color: #ededed;
+    color: #888;
+}
+.date-selector.date .calendar-content span.calendar-item.this:active{
+    cursor: not-allowed;
+}
+.date-selector.date .calendar-content span.calendar-item.this.optional{
+    background-color: #fff;
+    color: #1565C0;
+}
+.date-selector.date .calendar-content span.calendar-item.this.optional:active{
+    background-color: #6999d3;
+    color: #fff;
+    cursor: pointer;
+}
+.date-selector.date .calendar-content span.calendar-item.this.selected{
+    background-color: #1565C0;
+    color: #fff;
+}
+.date-selector.date .calendar-content span.calendar-item.prev:active,
+.date-selector.date .calendar-content span.calendar-item.next:active{
+    cursor: pointer;
+}
+.date-selector.date .calendar-content span.calendar-item.prev.not-allow:active{
+    cursor: not-allowed;
+}

@@ -1,0 +1,320 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei",sans-serif;
+}
+body{
+  background-color: #f7f7f7;
+  font-size: 15px;
+}
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 50%;
+}
+::-webkit-scrollbar-track:hover{
+  background-color: rgba(21,101,192,.1);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(21,101,192,.2);
+    border-radius: 2em;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(21,101,192,.4);
+}
+div{
+  display: block;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+h1, h2, h3, h4, h5, h6, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+a, img {
+  -webkit-touch-callout: none;
+  color: inherit;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+}
+a, button, input, textarea, select {
+  -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+a{
+  color: #6999d3;
+}
+a,a:active,a:visited,a:link,a:focus{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline:none;
+    background: none;
+    text-decoration: none;
+}
+a:hover{
+  color: #1565C0;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color:rgba(21, 101, 192, .7);
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color:rgba(21, 101, 192, .7);
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color:rgba(21, 101, 192, .7);
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color:rgba(21, 101, 192, .7);
+}
+/* 文本输入框删除按钮 */
+input::-ms-clear{display: none;}
+/* 密码框小眼睛 */
+input::-ms-reveal{display: none;}
+
+i {
+  font-style: normal;
+}
+
+/*-----input样式-----*/
+.input-wrap {
+  position: relative;
+  height: 30px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+  border-width: 0 0 1.5px 0;
+  border-style: solid;
+  border-color: rgba(21, 101, 192, .4);
+}
+
+.input-wrap .icon-span{
+  line-height: 30px;
+}
+.input-wrap .clear-span{
+  line-height: 25px;
+}
+.input-wrap .input-icon {
+  color: rgba(21, 101, 192, .4);
+}
+.input-filled.input-wrap .input-icon {
+  color: #1565C0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.input-wrap::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 1.5px;
+  bottom: -1.5px;
+  left: 0;
+  background-color: #1565C0;
+  z-index: 3;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.input-wrap input[type="text"],
+.input-wrap input[type="password"] {
+  position: absolute;
+  z-index: 3;
+  top: 0px;
+  left: 15px;
+  background-color: transparent;
+  height: 28px;
+  font-size: 0.9em;
+  padding: 2px 5px;
+  color: #1565C0;
+  border: none;
+  outline: none;
+}
+input.editable {
+  cursor: text;
+}
+input.readonly{
+  cursor: pointer;
+}
+.input-wrap-btn{
+  text-align: center;
+}
+.input-wrap-btn input[type="button"] {
+  background-color: #1565C0;
+  height: 30px;
+  font-size: 0.9em;
+  padding: 2px 5px;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.input-wrap-btn input[type="button"]:hover {
+  background-color: #6999d3;
+}
+/*--small--*/
+.input-wrap.small {
+  width: 200px;
+}
+.input-filled.input-wrap.small::after {
+  width: 200px;
+}
+.input-wrap.small input[type="text"],
+.input-wrap.small input[type="password"] {
+  width: 160px;
+}
+.input-wrap-btn.small input[type="button"]{
+  width: 200px;
+}
+/*--middle--*/
+.input-wrap.middle {
+  width: 80vw;
+}
+.input-filled.input-wrap.middle::after {
+  width: 80vw;
+}
+.input-wrap.middle input[type="text"],
+.input-wrap.middle input[type="password"] {
+  width: calc(80vw - 40px);
+}
+.input-wrap-btn.middle input[type="button"]{
+  width: 80vw;
+}
+/*--large--*/
+.input-wrap.large {
+  width: 280px;
+}
+.input-filled.input-wrap.large::after {
+  width: 280px;
+}
+.input-wrap.large input[type="text"],
+.input-wrap.large input[type="password"] {
+  width: 240px;
+}
+.input-wrap-btn.large input[type="button"]{
+  width: 280px;
+}
+
+.input-wrap .clear-span {
+  display: none;
+}
+.input-wrap.input-filled .clear-span {
+  position: absolute;
+  z-index: 3;
+  display: inline-block;
+  top: 3px;
+  right: 5px;
+  color: rgba(21, 101, 192, .7);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+.input-wrap.input-filled .clear-span:hover {
+  color: #1565C0;
+  cursor: pointer;
+}
+/*-------------------*/
+
+.wrapper-popup{
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10200;
+}
+.wrapper-popup .content {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 25px 15px 15px 25px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: -200px auto auto;
+  color: #1565C0;
+}
+.wrapper-popup .content .close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 30px;
+  font-size: 25px;
+  line-height: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  color: #6999d3;
+  border-radius: 50%;
+}
+.wrapper-popup .content .close:hover{
+  color: #1565C0;
+}
+.wrapper-popup .content .infos{
+  margin-top: 5px;
+}
+.wrapper-popup .content .btn-wrap{
+  text-align: right;
+  margin: 20px 0 0 0;
+}
+.wrapper-popup .content .btn-wrap button{
+  width: 55px;
+  height: 30px;
+  border-radius: 3px;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+.wrapper-popup .content .btn#ok{
+  background-color: #1565C0;
+  color: #fff;
+}
+.wrapper-popup .content .btn#ok:hover{
+  background-color: #6999d3;
+}
+.wrapper-popup .content .btn#cancel{
+  border: 1.5px solid #ccc;
+  background-color: #ededed;
+  color: #888;
+}
+.wrapper-popup .content .btn#cancel:hover{
+  background-color: #ccc;
+}
+/*.bg-img{
+	position: fixed;
+	display: block;
+	right: 0;
+	bottom: 0;
+	z-index: -20000;
+	height: 100%;
+	width: 100%;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	-moz-opacity: 0.5;
+	background-image: url(/img/bg-img.png);
+	background-size: auto 50%;
+	-moz-background-size: auto 50%;
+	background-position: bottom right;
+	background-repeat:no-repeat;
+}*/

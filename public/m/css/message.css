@@ -1,0 +1,119 @@
+.message-wrap{
+	margin: 80px auto 0 auto;
+}
+.message-sidebar{
+	position: fixed;
+	top: 45px;
+	left: 0;
+	height: 35px;
+	width: 100vw;
+	background-color: #fff;
+	margin-right: 10px;
+	border-bottom: 1px solid #ededed;
+}
+.message-sidebar .list-item{
+	position: relative;
+	display: inline-block;
+	padding: 0 3px;
+	line-height: 35px;
+	margin-left: 5px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.message-sidebar .list-item a{
+	display: block;
+	color: #174071;
+	width: 100%;
+	line-height: 33px;
+}
+.message-sidebar .list-item:active{
+	/*background-color: #e0ebf9;*/
+}
+.message-sidebar .list-item.active{
+	/*background-color: #a6c3e5;*/
+	border-bottom: 2px solid #a6c3e5;
+}
+.message-sidebar .list-item.active a{
+	color: #1565c0;
+}
+.message-sidebar .list-item .remind{
+	position: absolute;
+    right: -5px;
+    top: 1px;
+    line-height: 14px;
+    width: auto;
+    padding: 0 3.4px;
+    border-radius: 10px;
+    font-size: 10px;
+    color: #f25d64;
+	font-weight: bold;
+	text-shadow: #fff 1.5px 0 0, #fff 0 1.5px 0, #fff -1.5px 0 0, #fff 0 -1.5px 0;
+}
+.message-content{
+	background-color: #fff;
+	color: #174071;
+}
+.message-content .list{
+	overflow-x: none;
+	overflow-y: auto;
+	height: calc(100vh - 80px);
+}
+.message-content .list .list-empty{
+	text-align: center;
+	line-height: 60px;
+	font-size: 0.95em;
+	color: #1565c0;
+	user-select: none;
+}
+.message-content .list-item{
+	padding: 10px 15px;
+	border-bottom: 1px solid #ededed;
+}
+.message-content .list-item.system .msg-title{
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.message-content .list-item.system .msg-content{
+	margin-left: 10px;
+	color: #999;
+	font-size: 0.9em;
+}
+.message-content .list-item.system .msg-content .data-empty{
+	color: #888;
+}
+.message-content .list-item.system .msg-content .check-user{
+	text-align: right;
+}
+.message-content .list-item.system .msg-content .check-time{
+	text-align: right;
+}
+.message-content .list-item.like{
+	color: #666;
+	font-size:0.95em;
+}
+.message-content .list-item.like .like-user{
+	color: #174071;
+	font-size: 1.05em;
+}
+.message-content .list-item.like .like-time{
+	margin-top: 4px;
+	font-size: 0.85em;
+	color: #aaa;
+}
+.message-content .list-item.comment{
+	color: #666;
+	font-size:0.95em;
+}
+.message-content .list-item.comment .reply-user{
+	color: #174071;
+	font-size: 1.05em;
+}
+.message-content .list-item.comment .reply-time{
+	margin-top: 4px;
+	font-size: 0.85em;
+	color: #aaa;
+}
+.message-content .list i.fa-spinner{
+	margin: 150px auto;
+	width: 100%;
+}
