@@ -310,3 +310,8 @@ input.readonly{
 	background-position: bottom right;
 	background-repeat:no-repeat;
 }
+.loading-icon{
+  width: 50px;
+  margin: 50px auto;
+  color: #1565C0;
+}

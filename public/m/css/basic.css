@@ -301,6 +301,11 @@ input.readonly{
 .wrapper-popup .content .btn#cancel:hover{
   background-color: #ccc;
 }
+.loading-icon{
+  width: 50px;
+  margin: 50px auto;
+  color: #1565C0;
+}
 /*.bg-img{
 	position: fixed;
 	display: block;

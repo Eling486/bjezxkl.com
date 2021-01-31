@@ -5,6 +5,7 @@ function pageLoaded(){
 			return console.log(data)
 		}
 		if(data.data.length == 0){
+			$(".notices-wrap").html('')
 			return console.log('无公告')
 		}
 		var rows = data.data

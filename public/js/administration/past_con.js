@@ -40,7 +40,7 @@ function getContribution() {
 		}
 
 		data = rows;
-		
+
 		var years = []
 		for (var a = 0; a < data.length; a++) {
 			var con_time = data[a].con_time.split('-')
@@ -52,22 +52,23 @@ function getContribution() {
 			var year = ""
 			year = years[j];
 			conlist += "<div class='list-year-wrap' id='" + year + "'><div class='list-year-text'><b>&nbsp;> " + year + "年</b></div>"
-		for (var i = 0; i < data.length; i++) {
-			var time = data[i].con_time.split(' ')[1]
-			var date = data[i].con_time.split(' ')[0].split('-')
-			if(!data[i].hope_showname){
-				var hope_showname_text = "<span class='con-infos-empty'>（未指定）</span>"
-			}else{
-				var hope_showname_text = data[i].hope_showname
-			}
-			if(data[i].state == "ok"){
-				var state_text = "<span class='state-ok'>正常</span>"
-			}else if(data[i].state == "vip"){
-				var state_text = "<span class='state-vip'>会员</span>"
-			}else{
-				var state_text = "<span class='state-error'>无版权</span>"
-			}
-			conlist += "<div class='list-item list-item-" + data[i].cid +
+			for (var i = 0; i < data.length; i++) {
+				var time = data[i].con_time.split(' ')[1]
+				var date = data[i].con_time.split(' ')[0].split('-')
+				if (date[0] == year) {
+					if (!data[i].hope_showname) {
+						var hope_showname_text = "<span class='con-infos-empty'>（未指定）</span>"
+					} else {
+						var hope_showname_text = data[i].hope_showname
+					}
+					if (data[i].state == "ok") {
+						var state_text = "<span class='state-ok'>正常</span>"
+					} else if (data[i].state == "vip") {
+						var state_text = "<span class='state-vip'>会员</span>"
+					} else {
+						var state_text = "<span class='state-error'>无版权</span>"
+					}
+					conlist += "<div class='list-item list-item-" + data[i].cid +
 						"'><div class='con-infos' style='display: none;'><ul class='infos'><li class='data'>" + JSON.stringify(data[i]) +
 						"</li><li class='obj mid'>" + data[i].cid +
 						"</li><li class='obj key-obj date-obj date'>" + data[i].con_time +
@@ -86,8 +87,8 @@ function getContribution() {
 						"</div><div class='con-state'>" + state_text +
 						"</div><div class='con-user'>投稿人：<span class='con-user-span'>" + data[i].con_user +
 						"</span></div></div>"
-
-		}
+				}
+			}
 		}
 		if (data.length == 0) {
 			conlist = "<div class='list-tips-wrap' id='empty'><div class='list-tips-text'>—— 暂无投稿 ——</div>"
@@ -127,16 +128,16 @@ $('.list-content').on('click', '.list-item', function () {
 					url: "https://music.163.com/song/media/outer/url?id=" + id + ".mp3",
 					cover: picurl,
 					customAudioType: {
-					
+
 					}
-						/*theme: '#ebd0c2'*/
+					/*theme: '#ebd0c2'*/
 				}]);
 				checkStart(cid)
-			} else if(state == "vip" || state == "error"){
+			} else if (state == "vip" || state == "error") {
 				var state_text = ""
-				if(state == "vip"){
+				if (state == "vip") {
 					state_text = "(会员曲目)"
-				}else if(state == "error"){
+				} else if (state == "error") {
 					state_text = "(无版权)"
 				}
 				ap.pause()
@@ -147,7 +148,7 @@ $('.list-content').on('click', '.list-item', function () {
 					url: "",
 					cover: picurl,
 					customAudioType: {
-						
+
 					}
 					/*theme: '#ebd0c2'*/
 				}]);
@@ -162,77 +163,77 @@ function checkStart(cid) {
 	ap.list.hide()
 	getConInfos(cid)
 }
-function getConInfos(cid){
-	var con_infos = JSON.parse($(".list-content .list-item.list-item-"+ cid + " .con-infos .infos .data").html())
-	if(!con_infos.hope_showname){
+function getConInfos(cid) {
+	var con_infos = JSON.parse($(".list-content .list-item.list-item-" + cid + " .con-infos .infos .data").html())
+	if (!con_infos.hope_showname) {
 		var hope_showname_text = "<span class='con-infos-empty'>（未指定）</span>"
-	}else{
+	} else {
 		var hope_showname_text = con_infos.hope_showname
 	}
-	if(!con_infos.hope_date){
+	if (!con_infos.hope_date) {
 		var hope_date_text = "<span class='con-infos-empty'>（未指定）</span>"
-	}else{
+	} else {
 		var hope_date_text = con_infos.hope_date
 	}
-	if(!con_infos.plan_week){
+	if (!con_infos.plan_week) {
 		var plan_week_text = "<span class='con-infos-empty'>（无）</span>"
-	}else{
+	} else {
 		var plan_week_text = con_infos.plan_week
 	}
-	if(!con_infos.plan_date){
+	if (!con_infos.plan_date) {
 		var plan_date_text = "<span class='con-infos-empty'>（无）</span>"
-	}else{
+	} else {
 		var plan_date_text = con_infos.plan_date
 	}
-	if(!con_infos.showname){
+	if (!con_infos.showname) {
 		var showname_text = "<span class='con-infos-empty'>（无）</span>"
-	}else{
+	} else {
 		var showname_text = con_infos.showname
 	}
-	if(!con_infos.showname){
+	if (!con_infos.showname) {
 		var showname_text = "<span class='con-infos-empty'>（无）</span>"
-	}else{
+	} else {
 		var showname_text = con_infos.showname
 	}
-	if(con_infos.state == "ok"){
+	if (con_infos.state == "ok") {
 		var state_text = "<span class='state-ok'>正常</span>"
-	}else if(con_infos.state == "vip"){
+	} else if (con_infos.state == "vip") {
 		var state_text = "<span class='state-vip'>会员</span>"
-	}else{
+	} else {
 		var state_text = "<span class='state-error'>无版权</span>"
 	}
-	if(con_infos.check_type == "waiting"){
+	if (con_infos.check_type == "waiting") {
 		var type_text = "<span class='state-waiting' style='color: darkorange;'>待审核</span>"
-	}else if(con_infos.check_type == "fail"){
+	} else if (con_infos.check_type == "fail") {
 		var type_text = "<span class='state-fail' style='color: red;'>未录用</span>"
-	}else if(con_infos.check_type == "success"){
+	} else if (con_infos.check_type == "success") {
 		var type_text = "<span class='state-success' style='color: green;'>已录用</span>"
-	}else if(con_infos.check_type == "ready"){
+	} else if (con_infos.check_type == "ready") {
 		var type_text = "<span class='state-ready' style='color: green;'>已安排</span>"
-	}else if(con_infos.check_type == "used"){
+	} else if (con_infos.check_type == "used") {
 		var type_text = "<span class='state-used' style='color: grey;'>已使用</span>"
 	}
-	if(!con_infos.con_note){
+	if (!con_infos.con_note) {
 		var con_note_text = "<span class='con-infos-empty'>（无备注）</span>"
-	}else{
+	} else {
 		var con_note_text = con_infos.con_note
 	}
-	if(!con_infos.check_user){
+	if (!con_infos.check_user) {
 		var check_user_text = "<span class='con-infos-empty'>（无）</span>"
-	}else{
+	} else {
 		var check_user_text = con_infos.check_user
 	}
-	if(!con_infos.check_note){
+	if (!con_infos.check_note) {
 		var check_note_text = "<span class='con-infos-empty'>（无）</span>"
-	}else{
+	} else {
 		var check_note_text = con_infos.check_note
 	}
-	if(!con_infos.check_time){
+	if (!con_infos.check_time) {
 		var check_time_text = "<span class='con-infos-empty'>（无）</span>"
-	}else{
+	} else {
 		var check_time_text = con_infos.check_time
 	}
-	var realname_text = con_infos.realname.replace(new RegExp("&nbsp;",("gm"))," ");
+	var realname_text = con_infos.realname.replace(new RegExp("&nbsp;", ("gm")), " ");
 	$('.coninfos-text span.coninfos#infos').html(JSON.stringify(con_infos))
 	$('.coninfos-text span.coninfos#hope-date').html(hope_date_text)
 	$('.coninfos-text span.coninfos#plan-week').html(plan_week_text)
@@ -271,103 +272,103 @@ $(document).on('click', '.order-method-wrap', function () {
 })
 
 $(document).on('click', '.show-search-btn', function () {
-    if ($('.search-wrap').hasClass('showed')) {
-        $('.search-wrap').removeClass('showed')
-        $('.search-wrap .search-box').fadeOut()
-        $('.search-wrap').animate({ height: "-=50px" }, 300)
-        $('.search-wrap .text').html('展开搜索框')
-    } else {
-        $('.search-wrap').addClass('showed')
-        $('.search-wrap .text').html('收起搜索框')
-        $('.search-wrap').animate({ height: "+=50px" }, 300)
-        $('.search-wrap .search-box').fadeIn()
-    }
+	if ($('.search-wrap').hasClass('showed')) {
+		$('.search-wrap').removeClass('showed')
+		$('.search-wrap .search-box').fadeOut()
+		$('.search-wrap').animate({ height: "-=50px" }, 300)
+		$('.search-wrap .text').html('展开搜索框')
+	} else {
+		$('.search-wrap').addClass('showed')
+		$('.search-wrap .text').html('收起搜索框')
+		$('.search-wrap').animate({ height: "+=50px" }, 300)
+		$('.search-wrap .search-box').fadeIn()
+	}
 })
 //按年、月份搜索
 $("#search-month").focus(function () {
-    year = ""
-    month = ""
-    $('.month-selector').slideDown()
-    $("#search-month").parent().parent().addClass("choosing");
+	year = ""
+	month = ""
+	$('.month-selector').slideDown()
+	$("#search-month").parent().parent().addClass("choosing");
 
-    $(".search-by-month-wrap").hover(function () {
+	$(".search-by-month-wrap").hover(function () {
 
-    }, function () {
-        $('.month-selector').slideUp()
-        $("#search-month").blur()
-        $("#search-month").parent().parent().removeClass("choosing");
-        if ($("#search-month").val() == "-") {
-            $("#search-month").val("")
-            $("#search-month").change()
-        }
-        if ($('#search-month').val() == "") {
-            $(this).parent().removeClass('input-filled')
-        } else {
-            $(this).parent().addClass('input-filled')
-        }
-    })
+	}, function () {
+		$('.month-selector').slideUp()
+		$("#search-month").blur()
+		$("#search-month").parent().parent().removeClass("choosing");
+		if ($("#search-month").val() == "-") {
+			$("#search-month").val("")
+			$("#search-month").change()
+		}
+		if ($('#search-month').val() == "") {
+			$(this).parent().removeClass('input-filled')
+		} else {
+			$(this).parent().addClass('input-filled')
+		}
+	})
 });
 
 //空位补0
 function PrefixInteger(num, length) {
-    return (Array(length).join('0') + num).slice(-length);
+	return (Array(length).join('0') + num).slice(-length);
 }
 
 //年份选择
 $(document).on('click', '.month-selector .year-option-span', function () {
-    if ($(this).is('.chosen')) {
-        $(this).removeClass("chosen");
-        year = ""
-    } else {
-        $(this).parent().children().removeClass("chosen");
-        $(this).addClass("chosen");
-        year = $(this).attr('id')
-    }
-    $("#search-month").val(year + '-' + month)
-    $("#search-month").change()
+	if ($(this).is('.chosen')) {
+		$(this).removeClass("chosen");
+		year = ""
+	} else {
+		$(this).parent().children().removeClass("chosen");
+		$(this).addClass("chosen");
+		year = $(this).attr('id')
+	}
+	$("#search-month").val(year + '-' + month)
+	$("#search-month").change()
 })
 //月份选择
 $(document).on('click', '.month-selector .month-option-span', function () {
-    if ($(this).is('.chosen')) {
-        $(this).removeClass("chosen");
-        month = ""
-    } else {
-        $(this).parent().children().removeClass("chosen");
-        $(this).addClass("chosen");
-        month = PrefixInteger($(this).attr('id'),2) + "-"
-    }
-    $("#search-month").val(year + '-' + month)
-    $("#search-month").change()
+	if ($(this).is('.chosen')) {
+		$(this).removeClass("chosen");
+		month = ""
+	} else {
+		$(this).parent().children().removeClass("chosen");
+		$(this).addClass("chosen");
+		month = PrefixInteger($(this).attr('id'), 2) + "-"
+	}
+	$("#search-month").val(year + '-' + month)
+	$("#search-month").change()
 })
 
 //年月选择框
 $(".search-option").mouseleave(function () {
-    $('.search-option').slideUp()
-    $("#search-month").blur()
-    $("#search-month").parent().parent().removeClass("choosing");
-    if ($("#search-month").val() == "-") {
-        $("#search-month").val("")
-        $("#search-month").change()
-    }
-    if ($('#search-month').val() == "") {
-        $(this).parent().removeClass('input-filled')
-    } else {
-        $(this).parent().addClass('input-filled')
-    }
+	$('.search-option').slideUp()
+	$("#search-month").blur()
+	$("#search-month").parent().parent().removeClass("choosing");
+	if ($("#search-month").val() == "-") {
+		$("#search-month").val("")
+		$("#search-month").change()
+	}
+	if ($('#search-month').val() == "") {
+		$(this).parent().removeClass('input-filled')
+	} else {
+		$(this).parent().addClass('input-filled')
+	}
 })
 
 //清空选择
 $('.clear-span.search-month-clear').click(function () {
-    $(".month-selector span").removeClass("chosen");
+	$(".month-selector span").removeClass("chosen");
 });
 
 $(document).on('click', '.type-span', function () {
-    check_type_choosing = $(this).attr('id')
-    $('.type-wrap .type-span').removeClass('choosing')
-    $('.type-span#' + check_type_choosing).addClass('choosing')
+	check_type_choosing = $(this).attr('id')
+	$('.type-wrap .type-span').removeClass('choosing')
+	$('.type-span#' + check_type_choosing).addClass('choosing')
 })
 
 $(document).on('click', '.open-in-ncm', function () {
-    var url = "http://music.163.com/song?id=" + $('.coninfos#ncmid').html()
-    window.open(url, '_blank');
+	var url = "http://music.163.com/song?id=" + $('.coninfos#ncmid').html()
+	window.open(url, '_blank');
 })

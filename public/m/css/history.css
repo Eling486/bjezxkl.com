@@ -666,6 +666,7 @@ to {-webkit-transform:rotate(360deg);}
   text-align: center;
   color: #6999d3;
   margin: 20px 0;
+  user-select: none;
 }
 .comment-item {
   position: relative;

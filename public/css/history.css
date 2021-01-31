@@ -52,6 +52,7 @@
   font-size: 12px;
   float: right;
   padding: 3px 10px 3px 0;
+  user-select: none;
 }
 .history-wrap .list .show-search-btn:hover {
   cursor: pointer;
@@ -298,6 +299,7 @@
   font-size: 12px;
   text-align: right;
   padding: 5px 10px 5px 0;
+  user-select: none;
 }
 .history-wrap .music-infos-wrap .show-infos-btn:hover {
   cursor: pointer;
@@ -417,6 +419,7 @@
   font-size: 14px;
   background-color: #ededed;
   color: #888;
+  user-select: none;
 }
 .send-btn.active {
   background-color: #1565c0;
@@ -435,6 +438,7 @@
   text-align: center;
   color: #6999d3;
   margin: 20px 0;
+  user-select: none;
 }
 .comment-item {
   position: relative;

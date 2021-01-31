@@ -2,4 +2,5 @@ node_modules
 npm-debug.log
 log/access.log
 log/error.log
+public/mp3
 sessions/
