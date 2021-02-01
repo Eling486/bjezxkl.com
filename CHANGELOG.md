@@ -1,3 +1,8 @@
+### Version 1.0.6.2 | 2021.1.31
+
+> 1. views 代码结构优化，添加加载中图标
+> 2. public\js\administration\concheck.js等 修复了年份加载重复的bug
+
 ### Version 1.0.6.1 | 2020.7.10
 
 > 1. public\m\css\history.css  改进msg-box样式
