@@ -135,8 +135,8 @@ router.get('/weixin/register', function (req, res) {
     var password = req.body.password
     var email = req.body.email
     */
-    var AppID = 'wx5c19df5c91df0a8e';
-    var AppSecret = '0b2ff5e64b7a2cdffac6c3e8bb81e335';
+    var AppID = '******************';
+    var AppSecret = '********************************';
     var code = req.query.code
     console.log(code)
     request.get({
